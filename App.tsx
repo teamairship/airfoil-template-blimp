@@ -1,6 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { Blimp } from './app/assets/icons/Blimp';
+import { globalStyles } from './app/styles/globalStyles';
+import { Text } from './app/components/Text/Text';
+import { View } from './app/components/View/View';
 
 declare const global: { HermesInternal: null | {} };
 
@@ -8,7 +12,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <Text>App.tsx</Text>
+        <Blimp containerStyle={styles.icon} />
+        <Text>Welcome.</Text>
+        <Text>Let's get started.</Text>
       </View>
     </NavigationContainer>
   );
@@ -19,6 +25,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  icon: {
+    marginBottom: globalStyles.standardPadding * 2,
   },
 });
 
